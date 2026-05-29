@@ -102,10 +102,15 @@ extension NormalizedDateTimeFormatting on DateTime {
 }
 
 // ---------------------------------------------------------------------------
-// Nullable DateTime extension
+// Nullable extensions
 // ---------------------------------------------------------------------------
 
 extension NormalizedNullableDateTimeFormatting on DateTime? {
   /// Returns null if this is null, otherwise delegates to formatTimelineLabel.
   String? formatTimelineLabel() => this?.formatTimelineLabel();
+}
+
+extension NormalizedNullableStringParsing on String? {
+  /// Returns null if this is null, otherwise delegates to tryParseIsoLocal.
+  DateTime? tryParseIsoLocal() => this?.tryParseIsoLocal();
 }
