@@ -32,6 +32,9 @@ extension NormalizedDateTimeFormatting on DateTime {
   /// Ensure local without double converting.
   DateTime toLocalSafe() => isUtc ? toLocal() : this;
 
+  /// Alias for toLocalSafe — normalize to local time.
+  DateTime normalizedLocal() => toLocalSafe();
+
   bool isSameDate(DateTime other) =>
       year == other.year && month == other.month && day == other.day;
 
